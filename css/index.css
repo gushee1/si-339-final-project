@@ -1,0 +1,93 @@
+p {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.duo-photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.duo-photo-card > div {
+    width: 300px;
+    text-align: center;
+}
+
+.duo-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.duo-photo > img {
+    width: 150px;
+    height: 150px;
+}
+
+.photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo-card > img {
+    width: 300px;
+}
+
+.photo-card > div {
+    width: 300px;
+    text-align: center;
+}
+
+.special {
+    display: none;
+}
+
+@media screen and (min-width: 750px){
+    .duo-photo {
+        flex-direction: row;
+        align-items: center;
+    }
+    .photo-card > img {
+        width: 450px;
+    }
+    
+    .photo-card > div {
+        width: 450px;
+        text-align: center;
+    }
+    .duo-photo-card > div {
+        width: 450px;
+        text-align: center;
+    }
+    .duo-photo > img {
+        width: 225px;
+        height: 225px;
+    }
+    nav {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .special {
+        display: block;
+    }
+    .wrapper {
+        left: 10vw;
+    }
+    nav {
+        position: fixed;
+        left: 0;
+        flex-direction: column;
+        width: 10vw;
+        height: 100%;
+        top: 0
+    }
+}

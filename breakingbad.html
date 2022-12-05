@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/breakingbad.css">
+    <title>Will's Favorite Shows: Breaking Bad</title>
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <header>
+        Will's Favorite TV Shows
+    </header>
+    <nav>
+        <a id="current" href="breakingbad.html">Breaking Bad</a>
+        <a href="index.html">Home</a>
+        <a href="sopranos.html">The Sopranos</a>
+        <button onclick="changeColors()">Prefer Accessible Colors</button>
+    </nav>
+    <img class="banner" src="images/bb_banner.jpg" alt="Breaking Bad">
+    <p id="main" class="blurb">Short blurb about the show</p>
+    <div class="grid-container">
+        <div class="card">
+            <img src="images/walt_pilot.jpeg" alt="walt during the first episode of the show">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/https___cdn.cnn.com_cnnnext_dam_assets_130917141420-10-bryan-cranston-story-top.jpg" alt="Walt and Jessie">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/gus_fring.jpg" alt="Gus Fring">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/jessie_gf.jpeg" alt="jessie with his girlfriend jane">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/saul.jpg" alt="saul goodman">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/better_call_saul.jpg" alt="better call saul posterr">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/scenery.jpg" alt="beautiful desert vista from breaking bad">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/pollos_hermanos.jpg" alt="Los Pollos Hermanos">
+            <div>description</div>
+        </div>
+    </div>
+    <footer>
+        Created by William Gushee
+    </footer>
+
+    <script>
+        function changeColors() {
+            var body = document.querySelector("body");
+            body.style.backgroundColor = "white";
+            body.style.color = "black";
+        }
+        window.addEventListener('scroll', function (evt) {
+            //only run this function in mobile views
+            if(window.innerWidth < 750) {
+                var banner = document.getElementsByClassName("banner")[0];
+                var banner_height = banner.offsetHeight;
+                var distance_from_top = window.pageYOffset;
+                var header_height = document.querySelector("header").offsetHeight;
+                var nav = document.querySelector("nav");
+                var nav_height = nav.offsetHeight;
+                if (distance_from_top > header_height + nav_height) {
+                    banner.style.position = "fixed";
+                    banner.style.top = 0;
+                }
+                else if (distance_from_top < header_height / 3){
+                    banner.style.position = "relative";
+                }
+            }
+          });
+    </script>
+</body>
+</html>
