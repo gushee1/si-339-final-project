@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sopranos.css">
+    <title>Will's Favorite Shows: The Sopranos</title>
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <header>
+        Will's Favorite TV Shows
+    </header>
+    <nav>
+        <a href="breakingbad.html">Breaking Bad</a>
+        <a href="index.html">Home</a>
+        <a id="current" href="sopranos.html">The Sopranos</a>
+        <button onclick="changeColors()">Prefer Black/White</button>
+    </nav>
+    <img class="banner" src="images/sopranos_banner.jpg" alt="The Sopranos">
+    <p id="main" class="blurb">Short blurb about the show</p>
+    <div class="grid-container">
+        <div class="card">
+            <img src="images/mob.jpg" alt="Tony and the capos"> 
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/family.jpg" alt="Tony with his family">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/therapist_scene.jpg" alt="scene with the terapist">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/opening_scene.jpg" alt="Opening scene with view of the twin towers">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/satriales.jpg" alt="Satriales">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/sopranos_cast.jpg" alt="the cast of sopranos">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/christofa_adrianna.png" alt="christofa and adrianna">
+            <div>description</div>
+        </div>
+        <div class="card">
+            <img src="images/son.jpg" alt="James Gandolfini next to his son">
+            <div>description</div>
+        </div>
+    </div>
+    <footer>
+        Created by William Gushee
+    </footer>
+
+    <script>
+        var isColor = true;
+        function changeColors() {
+            var body = document.querySelector("body");
+            var button = document.querySelector("button");
+            if(isColor){
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
+                button.innerText = "Prefer Original Color";
+            }
+            else{
+                body.style.backgroundColor = "black";
+                body.style.color = "red";
+                button.innerText = "Prefer Black/White";
+            }   
+            isColor = !isColor;
+        }
+        window.addEventListener('scroll', function (evt) {
+            //only run this function in mobile views
+            if(window.innerWidth < 750) {
+                var banner = document.getElementsByClassName("banner")[0];
+                var banner_height = banner.offsetHeight;
+                var distance_from_top = window.pageYOffset;
+                var header_height = document.querySelector("header").offsetHeight;
+                var nav = document.querySelector("nav");
+                var nav_height = nav.offsetHeight;
+                if (distance_from_top > header_height + nav_height) {
+                    banner.style.position = "fixed";
+                    banner.style.top = 0;
+                }
+                else if (distance_from_top < header_height / 3){
+                    banner.style.position = "relative";
+                }
+            }
+          });
+    </script>
+</body>
+</html>
