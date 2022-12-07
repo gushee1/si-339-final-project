@@ -12,8 +12,23 @@ body {
     width: 100vw;
 }
 
+h3 {
+    width: 200px;
+    text-align: center;
+}
+
 nav > a{
     padding-bottom: 7px;
+    color: red;
+}
+
+a {
+    color: red;
+}
+
+button {
+    background-color: red;
+    color: black;
 }
 
 .grid-container {
@@ -44,11 +59,16 @@ footer {
 
 .blurb {
     text-align: center;
+    padding: 5vw;
 }
 
 @media screen and (min-width: 750px) {
     .grid-container {
         grid-template-columns: 1fr 1fr;
+    }
+
+    h3 {
+        width: 300px;
     }
 
     .card img {
